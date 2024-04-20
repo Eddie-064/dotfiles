@@ -1,0 +1,14 @@
+set ai
+set background=dark
+set enc=utf8
+set hls
+set relativenumber
+set ic
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set number
+set cscopetag
+colorscheme jellybeans 
+set t_Co=256
+syntax on
