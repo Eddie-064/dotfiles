@@ -147,6 +147,9 @@ return {
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
         "tsx",
+        "java",
+        "c",
+        "cpp",
         "typescript",
       })
     end,
