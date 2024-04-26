@@ -16,6 +16,8 @@ brew "python" # python (latest)
 brew "glow" # markdown viewer
 brew "highlight" # code syntax highlighting
 brew "fastlane"
+brew "ncdu"
+cask "packages"
 
 
 brew "bat" # better cat
