@@ -17,3 +17,7 @@ rm -rf ~/.config/nvim/.git
 
 # It is recommended to run :LazyHealth after installation.
 # This will load all plugins and check if everything is working correctly.
+
+mkdir -p ~/.vim/colors
+cd ~/.vim/colors
+curl -O https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
