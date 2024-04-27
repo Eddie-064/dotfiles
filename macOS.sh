@@ -29,3 +29,7 @@ defaults write com.apple.dock showAppExposeGestureEnabled -int 1
 defaults write showDesktopGestureEnabled -int 1
 defaults write showLaunchpadGestureEnabled -int 1
 defaults write showMissionControlGestureEnabled -int 1
+
+# finder setting
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
