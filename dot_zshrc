@@ -1,1 +1,2 @@
 alias vim="nvim"
+alias dot="cd ~/.local/share/chezmoi/"  # same as `chezmoi cd`
