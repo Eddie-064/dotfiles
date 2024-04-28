@@ -1573,6 +1573,12 @@
         "options": {
           "full_name": "packages"
         }
+      },
+      "stats": {
+        "version": "2.10.10",
+        "options": {
+          "full_name": "stats"
+        }
       }
     }
   },
