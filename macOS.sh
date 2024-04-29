@@ -33,3 +33,8 @@ defaults write showMissionControlGestureEnabled -int 1
 # finder setting
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder ShowPathbar -bool true
+
+# dock autohide
+# defaults write com.apple.dock autohide -int 1
+# defaults write com.apple.dock autohide-delay -int 0
+# defaults write com.apple.dock autohide-time-modifier -float 0.25

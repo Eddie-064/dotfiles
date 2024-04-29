@@ -1575,9 +1575,15 @@
         }
       },
       "stats": {
-        "version": "2.10.10",
+        "version": "2.10.11",
         "options": {
           "full_name": "stats"
+        }
+      },
+      "intellidock": {
+        "version": "1.0",
+        "options": {
+          "full_name": "intellidock"
         }
       }
     }
