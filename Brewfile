@@ -41,4 +41,5 @@ brew "zsh" # zsh (latest)
 brew "lazydocker"
 brew "youtube-dl"
 brew "yt-dlp"
+brew "aria2"
 cask "stats"
