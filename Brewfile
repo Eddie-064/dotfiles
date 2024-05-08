@@ -17,6 +17,7 @@ brew "glow" # markdown viewer
 brew "highlight" # code syntax highlighting
 brew "fastlane"
 brew "ncdu"
+brew "clang-format"
 cask "intellidock"
 cask "packages"
 
