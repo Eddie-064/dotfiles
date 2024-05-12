@@ -18,6 +18,7 @@ brew "highlight" # code syntax highlighting
 brew "fastlane"
 brew "ncdu"
 brew "clang-format"
+brew "bear"
 cask "intellidock"
 cask "packages"
 
