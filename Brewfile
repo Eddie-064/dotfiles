@@ -4,6 +4,7 @@ tap "homebrew/bundle"
 brew "git" # Git version control (latest version)
 brew "git-delta" # a better git diff
 brew "lazygit" # a better git UI
+brew "tig"
 brew "vim" # Vim (latest)
 brew "neovim" # A better vim
 brew "grep" # grep (latest)
@@ -28,7 +29,7 @@ brew "cloc" # lines of code counter
 brew "entr" # file watcher / command runner
 brew "fd" # find alternative
 brew "fnm" # Fast Node version manager
-brew "fzf" # Fuzzy file searcher, used in scripts and in vim
+brew "fzf" # Fuzzy file searcher, used in scripts and in vim, also can used in fzf-tmux with xargs
 brew "gh" # GitHub CLI
 brew "gnupg" # GPG
 brew "jq" # work with JSON files in shell scripts
