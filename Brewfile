@@ -50,3 +50,7 @@ cask "stats"
 # usb library
 brew "libusb"
 brew "pkg-config"
+
+
+tap "homebrew/cask-fonts"
+cask "font-hack-nerd-font"
