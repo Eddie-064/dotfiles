@@ -7,3 +7,6 @@ alias myip="curl ipinfo.io"
 alias ga="git add"
 alias gs="git status"
 alias gd="git diff"
+
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+export PATH="$HOME/Library/Android/sdk/ndk-bundle:$PATH"
