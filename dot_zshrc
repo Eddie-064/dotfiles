@@ -1,3 +1,9 @@
 alias vim="nvim"
 alias dot="cd ~/.local/share/chezmoi/"  # same as `chezmoi cd`
 alias repo="cd ~/repo"
+alias clr="clear"
+alias lg="lazygit"
+alias myip="curl ipinfo.io"
+alias ga="git add"
+alias gs="git status"
+alias gd="git diff"
