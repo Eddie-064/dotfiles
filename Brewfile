@@ -20,8 +20,9 @@ brew "fastlane"
 brew "ncdu"
 brew "clang-format"
 brew "bear"
-cask "intellidock"
+brew "node"
 cask "packages"
+cask "easydict"
 
 
 brew "bat" # better cat
