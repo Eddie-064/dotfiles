@@ -21,6 +21,8 @@ brew "ncdu"
 brew "clang-format"
 brew "bear"
 brew "node"
+brew "pyenv"
+brew "pyenv-virtualenv"
 cask "packages"
 cask "easydict"
 

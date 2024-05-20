@@ -8,5 +8,17 @@ alias ga="git add"
 alias gs="git status"
 alias gd="git diff"
 
+# Tmux aliases
+alias ta='tmux attach'
+alias tls='tmux list-sessions'
+alias tns='tmux new-session -s'
+alias tkill='tmux kill-session -t'
+alias tr='tmux rename-session -t'
+
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 export PATH="$HOME/Library/Android/sdk/ndk-bundle:$PATH"
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
