@@ -29,6 +29,7 @@ systemctl restart ssh
 # 添加開發人員的公鑰
 echo "Adding developer's public key..."
 mkdir -p ~/.ssh
+touch ~/.ssh/authorized_keys
 echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAC4VA8MrW7s1/o7LBpVYCOt6HhmYPs9wrOpKMC2AieS eddie@Eddies-MacBook-Air" >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 echo "Developer's public key added with comment changed to English."
