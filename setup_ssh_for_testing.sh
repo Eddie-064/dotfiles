@@ -20,7 +20,7 @@ systemctl start ssh
 echo "Configuring SSH security settings..."
 sed -i 's/#Port 22/Port 22/' /etc/ssh/sshd_config
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
-sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
 # 重啟 SSH 服務以應用更改
 echo "Restarting SSH service to apply changes..."
