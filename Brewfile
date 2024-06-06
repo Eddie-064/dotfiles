@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 
 # most commonly used
 brew "git" # Git version control (latest version)
+brew "act" # GitHub Actions locally
 brew "git-delta" # a better git diff
 brew "lazygit" # a better git UI
 brew "tig"
