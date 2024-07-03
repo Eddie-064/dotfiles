@@ -25,6 +25,7 @@ brew "bear"
 brew "node"
 brew "pyenv"
 brew "pyenv-virtualenv"
+brew "googletest"
 cask "packages"
 cask "easydict"
 
