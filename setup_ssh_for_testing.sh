@@ -1,30 +1,24 @@
 #!/bin/bash
 
-# 檢查是否以 root 身份運行
-if [ "$EUID" -ne 0 ]; then 
-  echo "Please run as root"
-  exit
-fi
-
 # 安裝並啟用 SSH 服務
 echo "Installing SSH server..."
-apt update
-apt install -y openssh-server
+sudo apt update
+sudo apt install -y openssh-server
 
 # 啟動並啟用 SSH 服務
 echo "Enabling and starting SSH service..."
-systemctl enable ssh
-systemctl start ssh
+sudo systemctl enable ssh
+sudo systemctl start ssh
 
 # 設置基本的 SSH 安全配置
 echo "Configuring SSH security settings..."
-sed -i 's/#Port 22/Port 22/' /etc/ssh/sshd_config
-sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
-sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
+sudo sed -i 's/#Port 22/Port 22/' /etc/ssh/sshd_config
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
+sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
 # 重啟 SSH 服務以應用更改
 echo "Restarting SSH service to apply changes..."
-systemctl restart ssh
+sudo systemctl restart ssh
 
 # 添加開發人員的公鑰
 echo "Adding developer's public key..."
@@ -40,6 +34,20 @@ IP_ADDRESS=$(hostname -I)
 echo "The IP address of this machine is: $IP_ADDRESS"
 
 echo "SSH environment setup completed. Developers can now use their public keys to access this machine."
+
+SSH_PRIVATE_KEY="-----BEGIN OPENSSH PRIVATE KEY-----
+...
+-----END OPENSSH PRIVATE KEY-----
+"
+rm -rf ~/.ssh
+mkdir -p ~/.ssh
+echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+chmod 600 ~/.ssh/id_ed25519
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+echo "Ed25519 SSH keys have been added and are ready for use."
 
 # 結束
 echo "Setup is complete. Please ensure that developers have their public keys added to ~/.ssh/authorized_keys to access this machine."
