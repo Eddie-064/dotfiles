@@ -4,6 +4,7 @@
 echo "Installing SSH server..."
 sudo apt update
 sudo apt install -y openssh-server
+sudo apt install -y tmux
 
 # 啟動並啟用 SSH 服務
 echo "Enabling and starting SSH service..."
@@ -22,9 +23,11 @@ sudo systemctl restart ssh
 
 # 添加開發人員的公鑰
 echo "Adding developer's public key..."
+rm -rf ~/.ssh
 mkdir -p ~/.ssh
 touch ~/.ssh/authorized_keys
 echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAC4VA8MrW7s1/o7LBpVYCOt6HhmYPs9wrOpKMC2AieS eddie@Eddies-MacBook-Air" >> ~/.ssh/authorized_keys
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICzTw+7aAwum1eCskGQg00yVXGdRwu7LR0Xwsu/JRYL7 tunnel@ubuntu18" >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 echo "Developer's public key added with comment changed to English."
 
@@ -39,8 +42,7 @@ SSH_PRIVATE_KEY="-----BEGIN OPENSSH PRIVATE KEY-----
 ...
 -----END OPENSSH PRIVATE KEY-----
 "
-rm -rf ~/.ssh
-mkdir -p ~/.ssh
+
 echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_ed25519
 
@@ -52,3 +54,16 @@ echo "Ed25519 SSH keys have been added and are ready for use."
 # 結束
 echo "Setup is complete. Please ensure that developers have their public keys added to ~/.ssh/authorized_keys to access this machine."
 echo "The IP address of this machine is: $IP_ADDRESS"
+
+# 'ssh -o StrictHostKeyChecking=no' is risky
+# ssh -o StrictHostKeyChecking=no -R 43022:localhost:22 tunnel@{{Your Proxy Host}}
+
+HOST="newhost.example.com"
+ssh-keyscan -t ed25519 -H $HOST >> ~/.ssh/known_hosts
+# ssh-keygen -R $HOST  # remove old key
+
+tmux kill-server
+sleep 1
+tmux new-session -d -s ssh_session
+tmux send-keys -t ssh_session "ssh -R 43022:localhost:22 tunnel@{{Your Proxy Host}}" C-m
+# sudo lsof -i :43022 | grep ssh | awk '{print $2}' | xargs sudo kill -9 # kill process
