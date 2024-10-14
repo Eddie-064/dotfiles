@@ -28,7 +28,7 @@ brew "pyenv-virtualenv"
 brew "googletest"
 cask "packages"
 cask "easydict"
-
+cask "typora"
 
 brew "bat" # better cat
 brew "cloc" # lines of code counter
