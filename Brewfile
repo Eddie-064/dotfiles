@@ -60,3 +60,4 @@ brew "pkg-config"
 
 tap "homebrew/cask-fonts"
 cask "font-hack-nerd-font"
+cask "visual-studio-code"
